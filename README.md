@@ -20,7 +20,7 @@ Story texts were scraped from FanFiction.net (https://www.fanfiction.net), using
 
 Text analysis is coded in Notebooks 1-4. Story text was cleaned of punctuation and numbers, but capital letters were left in, because many names in the story are not recognized as nouns, and I thought leaving them capitalized would allow the parts of speech tagger to tag them as proper nouns. This resulted in many stop words remaining capitalized, and then not removed due to capitalization. I went back to the original data, re-did the text preprocessing including removing capital letters, and then quadgrams were made, and then removal of stop words was attempted. I could not make the stop word removal work (the quadgrams were in tuples, and I could not remove the stop words from the tuples). I therefore went back, tokenized by single words, removed stop words, and then stemmed using Lancaster Stemmer, in order to reduce the number of words to analyze.
 
-Processed text was vectorized using TF-IDF in scikit-learn. Topic modeling by scikit-learn LSA (Truncated SVD) and NMF  was done on the TF-IDF document-term matrix. LDA topic modeling was done from the Count Vectorized processed text.
+Processed text was vectorized using Count Vectorizer and TF-IDF in scikit-learn. Topic modeling by scikit-learn LSA (Truncated SVD) and NMF  was done on the TF-IDF document-term matrix. LDA topic modeling was done from the Count Vectorized processed text.
 
 
 
