@@ -14,7 +14,9 @@ Fan fiction are stories written by fans of the original ("canon") books and film
 
 Story texts were scraped from FanFiction.net (https://www.fanfiction.net), using the Web Scraper Chrome extension (https://webscraper.io). Stories were filtered for Hunger Games, and then further filtered for language (English) and all four character filters were set to "Katniss Everdeen", as I wanted to see if secondary characters would feature prominently even in stories that had Katniss in them.
 
-LDA modeling might have been more useful if I had done parts of speech tagging and then removed the verbs. Topics 6, 7, and 8 are verb-heavy. Topics 3, 4, and 5 have some secondary characters (Johanna, Finnick, Effie, Clove, Cato), and Topic 2 seems to deal with home life in District 12 (Katniss, Prim (Katniss's sister), Peeta, mother, father).
+
+
+**Text Analysis**
 
 Text analysis is coded in Notebooks 1-4. Story text was cleaned of punctuation and numbers, but capital letters were left in, because many names in the story are not recognized as nouns, and I thought leaving them capitalized would allow the parts of speech tagger to tag them as proper nouns. This resulted in many stop words remaining capitalized, and then not removed due to capitalization. I went back to the original data, re-did the text preprocessing including removing capital letters, and then quadgrams were made, and then removal of stop words was attempted. I could not make the stop word removal work (the quadgrams were in tuples, and I could not remove the stop words from the tuples). I therefore went back, tokenized by single words, removed stop words, and then stemmed using Lancaster Stemmer, in order to reduce the number of words to analyze.
 
